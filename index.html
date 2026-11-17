@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LiberPax</title>
+  <meta name="description" content="LiberPax mobile games — Logic Factory and more.">
+  <link rel="icon" type="image/webp" href="images/logic-factory-icon.webp">
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #14171c;
+      --muted: #5b6370;
+      --border: #e3e6eb;
+      --accent: #0b5cad;
+      --tag-bg: #eef3f9;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 4px 16px rgba(16, 24, 40, .06);
+      --shadow-hover: 0 2px 4px rgba(16, 24, 40, .08), 0 12px 32px rgba(16, 24, 40, .12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1216;
+        --surface: #171b21;
+        --text: #e8ebef;
+        --muted: #9aa3ae;
+        --border: #262c35;
+        --accent: #6fb1f5;
+        --tag-bg: #1f2731;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+        --shadow-hover: 0 8px 28px rgba(0, 0, 0, .45);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+    header { padding: 56px 0 32px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--muted); max-width: 560px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      padding-bottom: 56px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+    .card-media { aspect-ratio: 1024 / 500; background: #1a5fd8; }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .card-body { display: flex; flex-direction: column; gap: 10px; padding: 20px; flex: 1; }
+    .card-body h2 { margin: 0; font-size: 20px; }
+    .card-body p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .tags li {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--accent);
+    }
+
+    .store-link { margin-top: auto; padding-top: 6px; }
+    .store-link a { display: inline-block; border-radius: 8px; }
+    .store-link a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .store-link img { height: 48px; width: auto; display: block; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1>LiberPax</h1>
+    <p>Small, handcrafted mobile games.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="grid" aria-label="Games">
+
+      <!-- To add a game, copy this <article> and update the image, text and store link. -->
+      <article class="card">
+        <div class="card-media">
+          <img src="images/logic-factory-banner.webp" alt="Logic Factory: a teddy bear holding a yellow gear on a blueprint background" width="1024" height="500">
+        </div>
+        <div class="card-body">
+          <h2>Logic Factory</h2>
+          <ul class="tags">
+            <li>Puzzle</li>
+            <li>Physics</li>
+            <li>Android</li>
+          </ul>
+          <p>
+            A physics puzzle game about building contraptions. Place boards, springs, fans,
+            balloons and more, then run the simulation and watch your machine reach the goal:
+            drop the ball in the basket, press the button, or blow something up.
+          </p>
+          <div class="store-link">
+            <a href="https://play.google.com/store/apps/details?id=com.hyena.logicFactory" target="_blank" rel="noopener">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Logic Factory on Google Play" width="646" height="250">
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="wrap">
+    &copy; 2026 LiberPax &middot; Google Play and the Google Play logo are trademarks of Google LLC.
+  </footer>
+</body>
+</html>
